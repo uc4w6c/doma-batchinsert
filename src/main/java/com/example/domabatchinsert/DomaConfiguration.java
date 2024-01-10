@@ -32,7 +32,7 @@ public class DomaConfiguration {
   }
 
   /**
-   * case: (same as PR)
+   * case: Prevent prepareIdValue if ignoreGeneratedKeys is true (same as PR)
    *
    * @param domaProperties
    * @return
