@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: local
+    password: pass
+    driverClassName: org.postgresql.Driver
+  batch:
+    jdbc:
+      initialize-schema: always
+
+doma:
+  batchSize: 100
+  fetchSize: 100
+  jdbcLogger: SLF4j
+logging.level:
+  org.seasar.doma: debug

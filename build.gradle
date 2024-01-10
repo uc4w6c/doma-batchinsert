@@ -1,0 +1,34 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.1'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '21'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-batch'
+	implementation 'org.seasar.doma.boot:doma-spring-boot-starter:1.7.0'
+	// implementation files('libs/doma-core-2.55.2-SNAPSHOT.jar')
+	// implementation files('libs/doma-core-2.55.0.jar')
+	implementation 'org.seasar.doma:doma-core:2.55.0'
+	implementation 'org.seasar.doma:doma-slf4j:2.55.0'
+	annotationProcessor 'org.seasar.doma:doma-processor:2.55.0'
+	// annotationProcessor files('libs/doma-processor-2.55.2-SNAPSHOT.jar')
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.batch:spring-batch-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
